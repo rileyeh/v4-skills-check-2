@@ -94,20 +94,20 @@ In this step, you will write a function that will hide the subscribe form when t
 
 #### index.js
 
-. use `getElementById` to select the `h3` element with an id of `close-form` and save it to a variable called `formBtn`
-. use `querySelector` to select the `form` using the tag name `form` and save it to a variable called `form`
-. write a function called `toggler` which should:
+1. Use `getElementById` to select the `h3` element with an id of `close-form` and save it to a variable called `formBtn`
+2. Use `querySelector` to select the `form` using the tag name `form` and save it to a variable called `form`
+3. Write a function called `toggler` which should:
     - use the built-in `toggle` function on `form`'s `classList` to toggle a class called `hide`
     - go into the `styles.css` file to see what the `hide` class does
     - write a conditional (you can use an if-then or a ternary) that checks if `formBtn`'s `innerText` is strictly equal to 'X'
     - if it does equal 'X', change the `innerText` to be a '+' instead
     - if it does not equal 'X', change the `innerText` to be an 'X'
-- with those two variables and our function written, the `toggler` function should hide the form and change the 'X' back and forth to a '+', now you just need to connect it to your HTML
+4. With those two variables and our function written, the `toggler` function should hide the form and change the 'X' back and forth to a '+', now you just need to connect it to your HTML
 
 #### index.html
 
-- add a `script` tag at the bottom of your `body` node and connect to `index.js`
-- assign the `toggler` function to the `h3` element on line 25 in an `onclick` event attribute 
+- Add a `script` tag at the bottom of your `body` node and connect to `index.js`
+- Assign the `toggler` function to the `h3` element on line 25 in an `onclick` event attribute 
 
 ### Step 2 - Form Validation
 
@@ -115,26 +115,26 @@ Now you are going to write a function to make sure that users type something in 
 
 #### index.js
 
-- use `getElementsByTagName` to select the name and email inputs 
-- save the name input to a variable called `nameInput`
-- save the email input to a variable called `emailInput`
+1. Use `getElementsByTagName` to select the name and email inputs 
+2. Save the name input to a variable called `nameInput`
+3. Save the email input to a variable called `emailInput`
     - hint: remember that you can access these elements by index like in an array
-- create a variable called `emailList` and set it to an empty array
+4. Create a variable called `emailList` and set it to an empty array
     - you are going to store the subscriber information here -- this is one of those cases where you will do something that you know how to do in place of more complicated things
-- write a function called `validateForm` that will house a large if-else statement. everything in this function will be inside the if-else.
-    - the first condition should check if both the `nameInput.value` and `emailInput.value` are false, which would mean that they are empty
+5. Write a function called `validateForm` that will house a large if-else statement. everything in this function will be inside the if-else.
+    1. The first condition should check if both the `nameInput.value` and `emailInput.value` are false, which would mean that they are empty
         - if they are, change both input fields' borders to be a solid red line with a 2px width using the `style` object
         - you should also set an `alert` that tells the user 'you must enter a name and an email address to subscribe!'
-    - next use an `else if` to check if just the `nameInput.value` is false
+    2. Next use an `else if` to check if just the `nameInput.value` is false
         - if it is, change the name input's border to be a solid red line with a 2px width using the `style` object
         - also set an `alert` that says 'please enter a name to subscribe'
-    - next use another `else if` to check if just the `emailInput.value` is false
+    3. Next use another `else if` to check if just the `emailInput.value` is false
         - if it is, change the email input's border to be a solid red line with a 2px width using the `style` object
         - also set an `alert` that says 'please enter an email address to subscribe'
-    - finally, in the last `else`, you will write the functioanlity that should be carried out if the form has both a name and an email entered
+    4. In the last `else`, you will write the functioanlity that should be carried out if the form has both a name and an email entered
         - push an object with `name` and `email` properties, whose values come from the `nameInput` and `emailInput` values respectively, into the `emailList` array
         - in the next step, you are going to call another function inside the `else` block as well
-    - now that you have the `validateForm` function written, you need to connect it to your HTML using `addEventListener`
+    5. Now that you have the `validateForm` function written, you need to connect it to your HTML using `addEventListener`
         - below your `validateForm` function, call `addEventListener` on your `form` variable, passing in the string 'submit' and a callback function
             - the callback function should have one parameter named `event`
             - inside the callback, invoke `event.preventDefault`
@@ -147,17 +147,17 @@ and then delete the thank you message after 3 seconds.
 
 #### index.js
 
-- use `getElementsByClassName` to select the div that holds the form by its class name `form-container`
-- save the container to a variable called `formContainer`
-- write a function called `removeMessage` that you will call inside your next function to remove the `formContainer`
+1. Use `getElementsByClassName` to select the div that holds the form by its class name `form-container`
+2. Save the container to a variable called `formContainer`
+3. Write a function called `removeMessage` that you will call inside your next function to remove the `formContainer`
     - use the `.remove` method on `formContainer` to delete it from the DOM
-- write a function called `displayThankYou` which should: 
+4. Write a function called `displayThankYou` which should: 
     - change the `innerText` of `formContainer` to the string: 'Thank you for subscribing!'
     - call the built in JavaScript function `setTimeout`, which takes in two parameters, a callback and a time
         - send in `removeMessage` as the callback
         - send in 3000 for the time (in milliseconds)
         - for example: `setTimeout(someFn, 5000)`
-- back in the else block of `validateForm`, invoke the `displayThankYou` function after you push the email information into the `emailList`
+5. Back in the else block of `validateForm`, invoke the `displayThankYou` function after you push the email information into the `emailList`
 
 
 ### Step 4 - Removing Red Border
@@ -166,9 +166,9 @@ You already set up a function to change the email and name inputs' borders to be
 
 #### index.js
 
-- call `addEventListener` on `nameInput`, passing in the string 'change' and a callback function
+1. Call `addEventListener` on `nameInput`, passing in the string 'change' and a callback function
     - the callback should change `nameInput`'s border to 'none' using the style object
-- call `addEventListener` on `emailInput`, passing in the string 'change' and a callback function
+2. Call `addEventListener` on `emailInput`, passing in the string 'change' and a callback function
     - the callback should change `emailInput`'s border to 'none' using the style object
 
 ### Step 5 - Cart Items Counter
@@ -177,10 +177,10 @@ Last, you'll make a 'cart' to track added items. Since you won't be saving this 
 
 #### index.js
 
-- use `createElement` to create a new `div` element, call the div `cart`
-- using `querySelector`, select the `main` node from your html file and save it to a variable called `main`, this is the node that you will append our new cart node to
-- create a variable called `cartItems` and set it to 0, this is the variable that will keep track of how many items are in the cart
-- now let's make the function that will fire when the 'add to cart' buttons are clicked
+1. Use `createElement` to create a new `div` element, call the div `cart`
+2. Using `querySelector`, select the `main` node from your html file and save it to a variable called `main`, this is the node that you will append our new cart node to
+3. Create a variable called `cartItems` and set it to 0, this is the variable that will keep track of how many items are in the cart
+4. Now let's make the function that will fire when the 'add to cart' buttons are clicked
     - name the function `addToCart`
     - `addToCart` should contain an if-else statement
     - if `cartItems` equals 0 when one of the buttons is clicked, then a few things need to happen
