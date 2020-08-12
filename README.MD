@@ -94,9 +94,9 @@ In this step, you will write a function that will hide the subscribe form when t
 
 #### index.js
 
-- use `getElementById` to select the `h3` element with an id of `close-form` and save it to a variable called `formBtn`
-- use `querySelector` to select the `form` using the tag name `form` and save it to a variable called `form`
-- write a function called `toggler` which should:
+. use `getElementById` to select the `h3` element with an id of `close-form` and save it to a variable called `formBtn`
+. use `querySelector` to select the `form` using the tag name `form` and save it to a variable called `form`
+. write a function called `toggler` which should:
     - use the built-in `toggle` function on `form`'s `classList` to toggle a class called `hide`
     - go into the `styles.css` file to see what the `hide` class does
     - write a conditional (you can use an if-then or a ternary) that checks if `formBtn`'s `innerText` is strictly equal to 'X'
