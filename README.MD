@@ -121,7 +121,7 @@ Now you are going to write a function to make sure that users type something in 
     - hint: remember that you can access these elements by index like in an array
 4. Create a variable called `emailList` and set it to an empty array
     - you are going to store the subscriber information here -- this is one of those cases where you will do something that you know how to do in place of more complicated things
-5. Write a function called `validateForm` that will house a large if-else statement. everything in this function will be inside the if-else.
+5. Write a function called `validateForm` that will house a large if-else statement. Everything in this function will be inside the if-else.
     1. The first condition should check if both the `nameInput.value` and `emailInput.value` are false, which would mean that they are empty
         - if they are, change both input fields' borders to be a solid red line with a 2px width using the `style` object
         - you should also set an `alert` that tells the user 'you must enter a name and an email address to subscribe!'
@@ -142,8 +142,7 @@ Now you are going to write a function to make sure that users type something in 
 
 ### Step 3 - Thank You Message
 
-Next, you will write the functionality to change the form into a thank you message 
-and then delete the thank you message after 3 seconds.
+Next, you will write the functionality to change the form into a thank you message and then delete the thank you message after 3 seconds.
 
 #### index.js
 
